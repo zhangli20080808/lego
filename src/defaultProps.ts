@@ -83,8 +83,13 @@ export const textDefaultProps = {
     ...commonDefaultProps
 }
 export const textStylePropNames = without(Object.keys(textDefaultProps), 'actionType', 'url', 'text')
-// {type: string, default: ''}
-export const transformToComponentProps = (props: TextComponentProps) => {
+
+/**
+ * 转换目标 {type: string, default: ''}
+ * @param props
+ *
+ */
+export const transformToComponentProps = <T extends { [key: string]: any }>(props: T) => {
     return mapValues(props, (item) => {
         return {
             type: item.constructor as StringConstructor,
