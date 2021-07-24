@@ -5,8 +5,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import useComponentCommon from '../hooks/useComponentCommon'
-import { transformToComponentProps, textDefaultProps, textStylePropNames } from '../defaultProps'
+import useComponentCommon from '@/hooks/useComponentCommon'
+import { transformToComponentProps, textDefaultProps, textStylePropNames } from '@/defaultProps'
 const defaultProps = transformToComponentProps(textDefaultProps)
 
 // array that contains style props
