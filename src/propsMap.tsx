@@ -6,7 +6,7 @@ export interface PropToForm {
   extraProps?: { [key: string]: any };
   text?: string;
   options?: { text: string | VNode; value: any }[];
-  initalTransform?: (v: any) => any;
+  initialTransform?: (v: any) => any;
   afterTransform?: (v: any) => any;
   valueProp?: string;
   eventName?: string;
@@ -37,14 +37,14 @@ export const mapPropsToForms: PropsToForms = {
   fontSize: {
     text: '字号',
     component: 'a-input-number',
-    initalTransform: (v: string) => parseInt(v),
+    initialTransform: (v: string) => parseInt(v),
     afterTransform: (e: number) => e ? `${e}px` : '',
   },
   lineHeight: {
     text: '行高',
     component: 'a-slider',
     extraProps: { min: 0, max: 3, step: 0.1 },
-    initalTransform: (v: string) => parseFloat(v),
+    initialTransform: (v: string) => parseFloat(v),
     afterTransform: (e: number) => e.toString(),
   },
   textAlign: {

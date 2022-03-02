@@ -1,4 +1,5 @@
 <template>
+  <!-- 作为一个展示型组件， 最好以事件的形式提供一个回调，需要做什么事情，让接受事件的容器组件决定，主要是为了业务和逻辑的隔离 -->
   <div class="edit-wrapper" @click="onItemClick(id)" :class="{ active: active }">
     <slot></slot>
   </div>
