@@ -1,8 +1,10 @@
 /**
  * 公有属性 + 特有属性 - 整体属性
+   业务组件 包含 样式属性+其他属性
  */
 import {mapValues, without} from 'lodash-es'
 
+// 通用属性
 export interface CommonComponentProps {
     // actions
     actionType: string;
@@ -55,6 +57,7 @@ export const commonDefaultProps: CommonComponentProps = {
     right: '0'
 }
 
+// 文本的特有属性
 export interface TextComponentProps extends CommonComponentProps {
     text: string;
     fontSize: string;
@@ -82,6 +85,9 @@ export const textDefaultProps = {
     backgroundColor: '',
     ...commonDefaultProps
 }
+/**
+ * without([1,2,3,4],1,2)=》[3,4]
+ */
 export const textStylePropNames = without(Object.keys(textDefaultProps), 'actionType', 'url', 'text')
 
 /**
