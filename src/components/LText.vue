@@ -23,8 +23,6 @@ export default defineComponent({
     // 重用并且简化
     // 抽离并且获得 styleProps
     const { styleProps, handleClick} = useComponentCommon(props, textStylePropNames)
-    console.log(styleProps)
-    
     return {
        styleProps,
        handleClick

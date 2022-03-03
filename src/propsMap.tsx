@@ -38,7 +38,7 @@ export const mapPropsToForms: PropsToForms = {
     text: '字号',
     component: 'a-input-number',
     initialTransform: (v: string) => parseInt(v),
-    afterTransform: (e: number) => e ? `${e}px` : '',
+    afterTransform: (e: number) => e ? `${e}px` : ''
   },
   lineHeight: {
     text: '行高',

@@ -16,6 +16,7 @@
           <div class="preview-list" id="canvas-area">
             <edit-wrapper
               @setActive="setActive"
+              @delItem="delItem"
               v-for="component in components"
               :key="component.id"
               :id="component.id"
@@ -56,7 +57,7 @@ import { defaultTextTemplates } from "@/defaultTemplates"
 import LText from "@/components/LText.vue"
 import ComponentsList from "@/components/ComponentsList.vue"
 import EditWrapper from "@/components/EditWrapper.vue"
-import PropsTable from "@/components/PropsTable.vue"
+import PropsTable from "@/components/PropsTable.tsx"
 
 export default defineComponent({
   components: {
@@ -74,6 +75,9 @@ export default defineComponent({
     const addItem = (props: any) => {
       store.commit("addComponent", props)
     }
+    const delItem = (props: any) => {
+      store.commit('delComponent', props)
+    }
     const setActive = (id: string) => {
       store.commit("setActive", id)
     }
@@ -88,6 +92,7 @@ export default defineComponent({
       setActive,
       currentElement,
       handleChange,
+      delItem
     }
   },
 })

@@ -34,6 +34,7 @@ import { reduce } from 'lodash'
 import { PropsToForms, mapPropsToForms } from '../propsMap'
 import { TextComponentProps } from '../defaultProps'
 import RenderVnode from './RenderVnode'
+// 渲染表单时候使用的数据结构，我们单独拿出来
 interface FormProps {
   component: string;
   subComponent?: string;
